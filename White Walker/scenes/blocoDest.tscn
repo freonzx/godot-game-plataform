@@ -5,7 +5,7 @@
 [ext_resource path="res://assets/particula.tres" type="Material" id=3]
 [ext_resource path="res://assets/Tiles/boxEmpty.png" type="Texture" id=4]
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 35.3249, 34.588 )
 
 [node name="blocoDest" type="StaticBody2D"]
@@ -17,7 +17,7 @@ script = ExtResource( 1 )
 texture = ExtResource( 2 )
 
 [node name="shape" type="CollisionShape2D" parent="."]
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 
 [node name="particles" type="Particles2D" parent="."]
 rotation = -1.5708

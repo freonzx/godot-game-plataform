@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://scripts/Game.gd" type="Script" id=1]
 [ext_resource path="res://scripts/personagem.gd" type="Script" id=2]
@@ -21,15 +21,19 @@
 [ext_resource path="res://assets/Tiles/cloud2.png" type="Texture" id=19]
 [ext_resource path="res://assets/Tiles/cloud3.png" type="Texture" id=20]
 [ext_resource path="res://scenes/Moeda.tscn" type="PackedScene" id=21]
-[ext_resource path="res://scenes/lesma.tscn" type="PackedScene" id=22]
-[ext_resource path="res://scenes/blocoDest.tscn" type="PackedScene" id=23]
-[ext_resource path="res://scenes/platMovel.tscn" type="PackedScene" id=24]
-[ext_resource path="res://assets/Botoes/esquerda0.png" type="Texture" id=25]
-[ext_resource path="res://assets/Botoes/esquerda1.png" type="Texture" id=26]
-[ext_resource path="res://assets/Botoes/direita0.png" type="Texture" id=27]
-[ext_resource path="res://assets/Botoes/direita1.png" type="Texture" id=28]
-[ext_resource path="res://assets/Botoes/cima0.png" type="Texture" id=29]
-[ext_resource path="res://assets/Botoes/cima1.png" type="Texture" id=30]
+[ext_resource path="res://scenes/walker.tscn" type="PackedScene" id=22]
+[ext_resource path="res://scenes/ogre.tscn" type="PackedScene" id=23]
+[ext_resource path="res://scenes/boss.tscn" type="PackedScene" id=24]
+[ext_resource path="res://scenes/blocoDest.tscn" type="PackedScene" id=25]
+[ext_resource path="res://scenes/platMovel.tscn" type="PackedScene" id=26]
+[ext_resource path="res://assets/Botoes/esquerda0.png" type="Texture" id=27]
+[ext_resource path="res://assets/Botoes/esquerda1.png" type="Texture" id=28]
+[ext_resource path="res://assets/Botoes/direita0.png" type="Texture" id=29]
+[ext_resource path="res://assets/Botoes/direita1.png" type="Texture" id=30]
+[ext_resource path="res://assets/Botoes/cima0.png" type="Texture" id=31]
+[ext_resource path="res://assets/Botoes/cima1.png" type="Texture" id=32]
+[ext_resource path="res://tilesets/castleset.tres" type="TileSet" id=33]
+[ext_resource path="res://assets/Sounds/background.wav" type="AudioStream" id=34]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 35.8413, 256.636 )
@@ -61,10 +65,25 @@ extents = Vector2( 27.626, 1.25784 )
 
 [sub_resource type="Curve2D" id=7]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 46.1509, 1.81433, 0, 0, 0, 0, 356.151, 1.81433 )
+"points": PoolVector2Array( 0, 0, 0, 0, 11.576, 4.32288, 0, 0, 0, 0, 361.576, 4.32288 )
 }
 
 [sub_resource type="Curve2D" id=8]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 1.66504, 18.0719, 0, 0, 0, 0, 241.665, 18.0719 )
+}
+
+[sub_resource type="Curve2D" id=9]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -0.412964, -4.73419, 0, 0, 0, 0, 269.587, -4.73419 )
+}
+
+[sub_resource type="Curve2D" id=10]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -4.04419, -1.92114, 0, 0, 0, 0, 205.956, 8.07886 )
+}
+
+[sub_resource type="Curve2D" id=11]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -60.9612, -18.6869, -118.829, 1.94801, 118.829, -1.94801, 192.133, -213.433, 0, 0, 0, 0, 470.847, -16.7389 )
 }
@@ -100,12 +119,10 @@ collision/safe_margin = 1.0
 script = ExtResource( 2 )
 
 [node name="sprite" type="AnimatedSprite" parent="personagem"]
-position = Vector2( 20.4429, 15.709 )
-scale = Vector2( 0.1, 0.1 )
+position = Vector2( 29.6289, 8.99585 )
+scale = Vector2( 0.124069, 0.124069 )
 frames = SubResource( 2 )
-animation = "jump"
-frame = 6
-playing = true
+frame = 2
 
 [node name="shape" type="CollisionShape2D" parent="personagem"]
 position = Vector2( 1.88676, 1.13206 )
@@ -238,6 +255,7 @@ scale = Vector2( 1.52958, 1.90985 )
 texture = ExtResource( 20 )
 
 [node name="moedas" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="moeda" parent="moedas" instance=ExtResource( 21 )]
 position = Vector2( 645.961, 521.229 )
@@ -271,33 +289,45 @@ position = Vector2( 1216.5, -96.6294 )
 
 [node name="inimigos" type="Node2D" parent="."]
 
-[node name="lesma" parent="inimigos" instance=ExtResource( 22 )]
-position = Vector2( 556.01, 502.522 )
+[node name="walker" parent="inimigos" instance=ExtResource( 22 )]
+position = Vector2( 575.989, 504.206 )
 curve = SubResource( 7 )
 
+[node name="walker2" parent="inimigos" instance=ExtResource( 22 )]
+position = Vector2( 1082.09, 217.632 )
+curve = SubResource( 8 )
+
+[node name="ogre" parent="inimigos" instance=ExtResource( 23 )]
+position = Vector2( 1097.98, 502.914 )
+curve = SubResource( 9 )
+
+[node name="ogre2" parent="inimigos" instance=ExtResource( 24 )]
+position = Vector2( 2361.61, 493.816 )
+curve = SubResource( 10 )
+
 [node name="blocos" type="Node2D" parent="."]
-editor/display_folded = true
 
-[node name="blocoDest" parent="blocos" instance=ExtResource( 23 )]
+[node name="blocoDest" parent="blocos" instance=ExtResource( 25 )]
+position = Vector2( 685.99, 211.416 )
 
-[node name="blocoDest2" parent="blocos" instance=ExtResource( 23 )]
-position = Vector2( 961.444, 399.405 )
+[node name="blocoDest2" parent="blocos" instance=ExtResource( 25 )]
+position = Vector2( 961.444, 436.325 )
 
-[node name="blocoDest5" parent="blocos" instance=ExtResource( 23 )]
+[node name="blocoDest5" parent="blocos" instance=ExtResource( 25 )]
 position = Vector2( 1511.62, 544.676 )
 
-[node name="blocoDest3" parent="blocos" instance=ExtResource( 23 )]
+[node name="blocoDest3" parent="blocos" instance=ExtResource( 25 )]
 position = Vector2( 1151.49, 98.8565 )
 
-[node name="blocoDest4" parent="blocos" instance=ExtResource( 23 )]
+[node name="blocoDest4" parent="blocos" instance=ExtResource( 25 )]
 position = Vector2( 1221.49, 98.5962 )
 
 [node name="plataformas" type="Node2D" parent="."]
 editor/display_folded = true
 position = Vector2( 3217.87, 503.433 )
 
-[node name="platMovel" parent="plataformas" instance=ExtResource( 24 )]
-curve = SubResource( 8 )
+[node name="platMovel" parent="plataformas" instance=ExtResource( 26 )]
+curve = SubResource( 11 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 2
@@ -308,20 +338,33 @@ editor/display_folded = true
 [node name="touchLeft" type="TouchScreenButton" parent="CanvasLayer/controles"]
 position = Vector2( 17.4902, 577.176 )
 scale = Vector2( 3.5, 3.5 )
-normal = ExtResource( 25 )
-pressed = ExtResource( 26 )
+normal = ExtResource( 27 )
+pressed = ExtResource( 28 )
 
 [node name="touchRight" type="TouchScreenButton" parent="CanvasLayer/controles"]
 position = Vector2( 188.206, 577.176 )
 scale = Vector2( 3.5, 3.5 )
-normal = ExtResource( 27 )
-pressed = ExtResource( 28 )
+normal = ExtResource( 29 )
+pressed = ExtResource( 30 )
 
 [node name="touchUp" type="TouchScreenButton" parent="CanvasLayer/controles"]
 position = Vector2( 1114.6, 577.176 )
 scale = Vector2( 3.5, 3.5 )
-normal = ExtResource( 29 )
-pressed = ExtResource( 30 )
+normal = ExtResource( 31 )
+pressed = ExtResource( 32 )
+
+[node name="Castle" type="TileMap" parent="."]
+scale = Vector2( 2.5, 2.5 )
+tile_set = ExtResource( 33 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 65536, 22, 0, 65537, 23, 0, 65538, 23, 0, 65539, 23, 0, 65540, 23, 0, 65541, 23, 0, 65542, 23, 0, 65543, 23, 0, 65544, 23, 0, 65545, 23, 0, 65546, 24, 0 )
+
+[node name="background" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 34 )
+volume_db = -8.0
+autoplay = true
+
 [connection signal="timeout" from="spawn_timer" to="." method="_on_spawn_timer_timeout"]
 [connection signal="body_entered" from="fim" to="personagem" method="_on_fim_body_entered"]
 [connection signal="fim" from="personagem" to="." method="_on_personagem_fim"]

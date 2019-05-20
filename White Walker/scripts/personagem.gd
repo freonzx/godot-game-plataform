@@ -18,15 +18,15 @@ var fim
 # This demo shows how to build a kinematic controller.
 
 # Member variables
-const GRAVITY = 1100.0 # pixels/second/second
+const GRAVITY = 1300.0 # pixels/second/second
 
 # Angle in degrees towards either side that the player can consider "floor"
 const FLOOR_ANGLE_TOLERANCE = 40
-const WALK_FORCE = 1000
+const WALK_FORCE = 8000
 const WALK_MIN_SPEED = 150
 const WALK_MAX_SPEED = 300
-const STOP_FORCE = 1500
-const JUMP_SPEED = 700
+const STOP_FORCE = 6000
+const JUMP_SPEED = 800
 const JUMP_MAX_AIRBORNE_TIME = 0.2
 
 const SLIDE_STOP_VELOCITY = 1.0 # one pixel/second

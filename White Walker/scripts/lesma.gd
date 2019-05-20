@@ -8,7 +8,7 @@ func _ready():
 	set_physics_process(true)
 	
 func _physics_process(delta):
-	var new_offset = get_parent().get_unit_offset() + delta * sentido * 0.3
+	var new_offset = get_parent().get_unit_offset() + delta * sentido * 0.6
 	if sentido == 1 and new_offset >= 0.99999:
 		sentido = -1
 		get_parent().set_unit_offset(0.99999)
@@ -29,4 +29,8 @@ func esmagar():
 #	get_node("sprite").set_texture(load("res://assets/Inimigo/slimeDead.png"))
 #	get_node("sprite").set_offset(Vector2(0,8))
 	get_node("CollisionShape2D").queue_free()
+	$'Timer'.start()
 	set_physics_process(false)
+
+func _on_Timer_timeout():
+	$'AnimatedSprite'.queue_free()
