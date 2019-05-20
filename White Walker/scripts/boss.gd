@@ -33,4 +33,5 @@ func esmagar():
 	set_physics_process(false)
 
 func _on_Timer_timeout():
+	$'Particles2D'.queue_free()
 	$'AnimatedSprite'.queue_free()
