@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/SUCCESS BEEPS Multi Echo Short 02.wav-0dbdb13bd0d8b4f1ef7ecd9d0ec29090.sample"
+
+[deps]
+
+source_file="res://assets/Sounds/GameBurp FREE Game Sound FX Pack - WAV/SUCCESS BEEPS Multi Echo Short 02.wav"
+dest_files=[ "res://.import/SUCCESS BEEPS Multi Echo Short 02.wav-0dbdb13bd0d8b4f1ef7ecd9d0ec29090.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

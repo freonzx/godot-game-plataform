@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/SPLAT Crush 01.wav-db119a2048a12f0d4cf59a7febf68989.sample"
+
+[deps]
+
+source_file="res://assets/Sounds/GameBurp FREE Game Sound FX Pack - WAV/SPLAT Crush 01.wav"
+dest_files=[ "res://.import/SPLAT Crush 01.wav-db119a2048a12f0d4cf59a7febf68989.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

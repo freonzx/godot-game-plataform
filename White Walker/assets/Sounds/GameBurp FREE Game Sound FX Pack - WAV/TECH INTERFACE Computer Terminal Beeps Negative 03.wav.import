@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/TECH INTERFACE Computer Terminal Beeps Negative 03.wav-84cf7cc893f332834c23f7e59fe41ec2.sample"
+
+[deps]
+
+source_file="res://assets/Sounds/GameBurp FREE Game Sound FX Pack - WAV/TECH INTERFACE Computer Terminal Beeps Negative 03.wav"
+dest_files=[ "res://.import/TECH INTERFACE Computer Terminal Beeps Negative 03.wav-84cf7cc893f332834c23f7e59fe41ec2.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

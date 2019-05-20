@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/NEGATIVE Failure Descending Chime 05.wav-0765a474276f1d28994d3d0b7dc8f71c.sample"
+
+[deps]
+
+source_file="res://assets/Sounds/GameBurp FREE Game Sound FX Pack - WAV/NEGATIVE Failure Descending Chime 05.wav"
+dest_files=[ "res://.import/NEGATIVE Failure Descending Chime 05.wav-0765a474276f1d28994d3d0b7dc8f71c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

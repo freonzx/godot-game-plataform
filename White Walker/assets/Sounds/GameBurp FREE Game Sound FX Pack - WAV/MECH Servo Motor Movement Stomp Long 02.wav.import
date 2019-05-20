@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/MECH Servo Motor Movement Stomp Long 02.wav-2ba7e5063d16b23985fa567ab7863cef.sample"
+
+[deps]
+
+source_file="res://assets/Sounds/GameBurp FREE Game Sound FX Pack - WAV/MECH Servo Motor Movement Stomp Long 02.wav"
+dest_files=[ "res://.import/MECH Servo Motor Movement Stomp Long 02.wav-2ba7e5063d16b23985fa567ab7863cef.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

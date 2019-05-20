@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/BONG Bell Timer Hit Deep 01.wav-0806380cb57eb01e3b86a16f2ae01362.sample"
+
+[deps]
+
+source_file="res://assets/Sounds/GameBurp FREE Game Sound FX Pack - WAV/BONG Bell Timer Hit Deep 01.wav"
+dest_files=[ "res://.import/BONG Bell Timer Hit Deep 01.wav-0806380cb57eb01e3b86a16f2ae01362.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

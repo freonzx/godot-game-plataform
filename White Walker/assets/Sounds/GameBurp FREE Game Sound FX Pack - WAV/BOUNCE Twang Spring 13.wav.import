@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/BOUNCE Twang Spring 13.wav-3f1befb5a483ed735bac4d2c8a3ccf7f.sample"
+
+[deps]
+
+source_file="res://assets/Sounds/GameBurp FREE Game Sound FX Pack - WAV/BOUNCE Twang Spring 13.wav"
+dest_files=[ "res://.import/BOUNCE Twang Spring 13.wav-3f1befb5a483ed735bac4d2c8a3ccf7f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

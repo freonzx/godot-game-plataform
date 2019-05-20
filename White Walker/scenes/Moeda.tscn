@@ -2,7 +2,7 @@
 
 [ext_resource path="res://scripts/Moeda.gd" type="Script" id=1]
 [ext_resource path="res://assets/Bonus_Items/Coin_03.png" type="Texture" id=2]
-[ext_resource path="res://assets/Sounds/coin.wav" type="AudioStream" id=3]
+[ext_resource path="res://assets/Sounds/GameBurp FREE Game Sound FX Pack - WAV/COINS Collect Jackpot Win 03.wav" type="AudioStream" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 32.1248
@@ -24,7 +24,7 @@ tracks/0/keys = {
 "values": [ Vector2( -0.299787, 0.149891 ), Vector2( -0.3, -6 ), Vector2( -0.3, 5 ), Vector2( -0.3, -0.14 ) ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 resource_name = "fade"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:modulate")
@@ -39,13 +39,13 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Gradient" id=5]
+[sub_resource type="Gradient" id=4]
 colors = PoolColorArray( 0.905882, 0.635294, 0.0666667, 1, 1, 0.980392, 0, 1 )
 
-[sub_resource type="GradientTexture" id=6]
-gradient = SubResource( 5 )
+[sub_resource type="GradientTexture" id=5]
+gradient = SubResource( 4 )
 
-[sub_resource type="ParticlesMaterial" id=3]
+[sub_resource type="ParticlesMaterial" id=6]
 emission_shape = 2
 emission_box_extents = Vector3( 20, 1, 1 )
 flag_disable_z = true
@@ -57,7 +57,7 @@ angle = 10.0
 angle_random = 0.6
 scale = 7.7
 scale_random = 0.52
-color_ramp = SubResource( 6 )
+color_ramp = SubResource( 5 )
 
 [node name="moeda" type="Area2D"]
 collision_layer = 4096
@@ -74,19 +74,19 @@ texture = ExtResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/default = SubResource( 2 )
-anims/fade = SubResource( 4 )
+anims/fade = SubResource( 3 )
 
 [node name="Particles2D" type="Particles2D" parent="."]
 show_behind_parent = true
 position = Vector2( 0.832169, -15.8112 )
-process_material = SubResource( 3 )
+process_material = SubResource( 6 )
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 
 [node name="som" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 3 )
-volume_db = -11.19
+volume_db = -8.0
 
 [connection signal="body_entered" from="." to="." method="_on_moeda_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

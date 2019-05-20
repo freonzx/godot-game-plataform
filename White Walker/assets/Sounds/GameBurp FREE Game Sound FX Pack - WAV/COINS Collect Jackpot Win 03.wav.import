@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/COINS Collect Jackpot Win 03.wav-9b13cf0fbae4632cb33e1959267e144b.sample"
+
+[deps]
+
+source_file="res://assets/Sounds/GameBurp FREE Game Sound FX Pack - WAV/COINS Collect Jackpot Win 03.wav"
+dest_files=[ "res://.import/COINS Collect Jackpot Win 03.wav-9b13cf0fbae4632cb33e1959267e144b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

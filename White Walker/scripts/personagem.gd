@@ -7,6 +7,7 @@ onready var sprite = get_node("sprite")
 var vivo = true
 signal morreu
 signal fim
+signal moeda
 
 var left
 var right
@@ -22,11 +23,11 @@ const GRAVITY = 1300.0 # pixels/second/second
 
 # Angle in degrees towards either side that the player can consider "floor"
 const FLOOR_ANGLE_TOLERANCE = 40
-const WALK_FORCE = 8000
+const WALK_FORCE = 9000
 const WALK_MIN_SPEED = 150
-const WALK_MAX_SPEED = 300
+const WALK_MAX_SPEED = 400
 const STOP_FORCE = 6000
-const JUMP_SPEED = 800
+const JUMP_SPEED = 850
 const JUMP_MAX_AIRBORNE_TIME = 0.2
 
 const SLIDE_STOP_VELOCITY = 1.0 # one pixel/second
@@ -175,3 +176,6 @@ func reviver():
 func _on_fim_body_entered(body):
 	fim = true
 	emit_signal("fim")
+	
+func moeda():
+	emit_signal("moeda")

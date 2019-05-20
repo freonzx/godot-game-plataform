@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/SLIDER Swipe Drag Movement Stone 08.wav-ef0a7b8c6eab98fe9fb5f4537472e6ca.sample"
+
+[deps]
+
+source_file="res://assets/Sounds/GameBurp FREE Game Sound FX Pack - WAV/SLIDER Swipe Drag Movement Stone 08.wav"
+dest_files=[ "res://.import/SLIDER Swipe Drag Movement Stone 08.wav-ef0a7b8c6eab98fe9fb5f4537472e6ca.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

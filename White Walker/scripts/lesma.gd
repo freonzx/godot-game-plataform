@@ -24,10 +24,9 @@ func _physics_process(delta):
 func esmagar():
 	if not vivo: return
 	vivo = false
+	get_node("death").play()
 	get_node("AnimatedSprite").stop()
 	get_node("AnimatedSprite").play("dying")
-#	get_node("sprite").set_texture(load("res://assets/Inimigo/slimeDead.png"))
-#	get_node("sprite").set_offset(Vector2(0,8))
 	get_node("CollisionShape2D").queue_free()
 	$'Timer'.start()
 	set_physics_process(false)

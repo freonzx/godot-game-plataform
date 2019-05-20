@@ -4,6 +4,7 @@ func _ready():
 	$'AnimationPlayer'.play("default")
 
 func _on_moeda_body_entered(body):
+	body.moeda()
 	$'som'.play()
 	$'Timer'.start()
 	$'AnimationPlayer'.play("fade")
