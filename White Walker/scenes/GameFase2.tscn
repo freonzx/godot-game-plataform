@@ -113,22 +113,22 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 4.03076, 1.99792, 0, 0, 0, 0, 394.031, 1.99792 )
 }
 
-[sub_resource type="Curve2D" id=21]
+[sub_resource type="Curve2D" id=16]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 4.90601, -5.3479, 0, 0, 0, 0, 1464.91, 14.6521 )
 }
 
-[sub_resource type="Curve2D" id=22]
+[sub_resource type="Curve2D" id=17]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -8.65222, -2.74414, 0, 0, 0, 0, 1611.35, -2.74414 )
 }
 
-[sub_resource type="Curve2D" id=23]
+[sub_resource type="Curve2D" id=18]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 189.047, -76.779, 0, 0, 0, 0, 479.047, -306.779, 0, 0, 0, 0, 719.047, -396.779, 0, 0, 0, 0, 1129.05, -336.779, 0, 0, 0, 0, 1099.05, 53.221, 0, 0, 0, 0, 629.047, 203.221, 0, 0, 0, 0, 339.047, 343.221, 0, 0, 0, 0, 359.047, 563.221, 0, 0, 0, 0, 739.047, 723.221, 0, 0, 0, 0, 1229.05, 823.221, 0, 0, 0, 0, 1489.05, 643.221, 0, 0, 0, 0, 1569.05, 443.221, 0, 0, 0, 0, 1059.05, 273.221 )
 }
 
-[sub_resource type="StyleBoxFlat" id=16]
+[sub_resource type="StyleBoxFlat" id=19]
 bg_color = Color( 0.0117647, 0.0117647, 0.0117647, 0.32549 )
 border_width_left = 10
 border_width_top = 10
@@ -137,19 +137,19 @@ border_width_bottom = 10
 border_color = Color( 0.027451, 0.964706, 0.0784314, 1 )
 border_blend = true
 
-[sub_resource type="DynamicFont" id=17]
+[sub_resource type="DynamicFont" id=20]
 size = 75
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 32 )
 
-[sub_resource type="Gradient" id=18]
+[sub_resource type="Gradient" id=21]
 colors = PoolColorArray( 1, 0.00392157, 0.00392157, 1, 0.780392, 0.466667, 0.466667, 1 )
 
-[sub_resource type="GradientTexture" id=19]
-gradient = SubResource( 18 )
+[sub_resource type="GradientTexture" id=22]
+gradient = SubResource( 21 )
 
-[sub_resource type="ParticlesMaterial" id=20]
+[sub_resource type="ParticlesMaterial" id=23]
 emission_shape = 1
 emission_sphere_radius = 20.12
 flag_disable_z = true
@@ -160,7 +160,7 @@ orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 scale = 3.0
 scale_random = 0.4
-color_ramp = SubResource( 19 )
+color_ramp = SubResource( 22 )
 
 [node name="Game" type="Node2D"]
 position = Vector2( -7.56506, 8.10541 )
@@ -251,7 +251,6 @@ stream = ExtResource( 17 )
 volume_db = -15.0
 
 [node name="moedas" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="moeda" parent="moedas" instance=ExtResource( 18 )]
 position = Vector2( 833.853, -774.156 )
@@ -310,6 +309,9 @@ position = Vector2( 1340.97, -1155.27 )
 [node name="moeda15" parent="moedas" instance=ExtResource( 20 )]
 position = Vector2( 154.662, -514.461 )
 
+[node name="moeda18" parent="moedas" instance=ExtResource( 20 )]
+position = Vector2( 1802.79, -1450.38 )
+
 [node name="inimigos" type="Node2D" parent="."]
 
 [node name="walker" parent="inimigos" instance=ExtResource( 21 )]
@@ -358,15 +360,15 @@ curve = SubResource( 15 )
 
 [node name="bullet4" parent="inimigos" instance=ExtResource( 24 )]
 position = Vector2( 1582.66, 367.242 )
-curve = SubResource( 21 )
+curve = SubResource( 16 )
 
 [node name="bullet7" parent="inimigos" instance=ExtResource( 24 )]
 position = Vector2( 1586.22, -115.361 )
-curve = SubResource( 22 )
+curve = SubResource( 17 )
 
 [node name="bullet8" parent="inimigos" instance=ExtResource( 24 )]
 position = Vector2( 1608.52, -841.326 )
-curve = SubResource( 23 )
+curve = SubResource( 18 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 2
@@ -400,7 +402,7 @@ margin_left = 126.0
 margin_top = 9.0
 margin_right = 1154.0
 margin_bottom = 109.0
-custom_styles/panel = SubResource( 16 )
+custom_styles/panel = SubResource( 19 )
 
 [node name="coin" type="Sprite" parent="CanvasLayer/Panel"]
 position = Vector2( 57.793, 51 )
@@ -412,7 +414,7 @@ margin_left = 110.595
 margin_top = -4.84958
 margin_right = 158.595
 margin_bottom = 90.1504
-custom_fonts/font = SubResource( 17 )
+custom_fonts/font = SubResource( 20 )
 text = "0"
 
 [node name="chests" type="Label" parent="CanvasLayer/Panel"]
@@ -420,7 +422,7 @@ margin_left = 530.495
 margin_top = -5.0
 margin_right = 578.495
 margin_bottom = 90.0
-custom_fonts/font = SubResource( 17 )
+custom_fonts/font = SubResource( 20 )
 text = "0"
 
 [node name="heart1" type="TextureRect" parent="CanvasLayer/Panel"]
@@ -435,7 +437,7 @@ expand = true
 [node name="Particles2D" type="Particles2D" parent="CanvasLayer/Panel/heart1"]
 position = Vector2( 36.5856, 26.914 )
 scale = Vector2( 1.38331, 1.38331 )
-process_material = SubResource( 20 )
+process_material = SubResource( 23 )
 
 [node name="heart2" type="TextureRect" parent="CanvasLayer/Panel"]
 editor/display_folded = true
@@ -449,7 +451,7 @@ expand = true
 [node name="Particles2D" type="Particles2D" parent="CanvasLayer/Panel/heart2"]
 position = Vector2( 36.5856, 26.914 )
 scale = Vector2( 1.38331, 1.38331 )
-process_material = SubResource( 20 )
+process_material = SubResource( 23 )
 
 [node name="heart3" type="TextureRect" parent="CanvasLayer/Panel"]
 editor/display_folded = true
@@ -463,7 +465,7 @@ expand = true
 [node name="Particles2D" type="Particles2D" parent="CanvasLayer/Panel/heart3"]
 position = Vector2( 36.5856, 26.914 )
 scale = Vector2( 1.38331, 1.38331 )
-process_material = SubResource( 20 )
+process_material = SubResource( 23 )
 
 [node name="chest" type="Sprite" parent="CanvasLayer/Panel"]
 position = Vector2( 491.9, 48.15 )
