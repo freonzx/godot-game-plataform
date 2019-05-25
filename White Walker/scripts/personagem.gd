@@ -7,7 +7,10 @@ onready var sprite = get_node("sprite")
 var vivo = true
 signal morreu
 signal fim
+# Items
 signal moeda
+signal bau
+signal heart
 
 var left
 var right
@@ -93,8 +96,10 @@ func _physics_process(delta):
 	
 	if walk_right:
 		sprite.set_flip_h(false)
+		sprite.set_position(Vector2(30,9))
 	if walk_left:
 		sprite.set_flip_h(true)
+		sprite.set_position(Vector2(-26,9))
 		
 	if(walk_left or walk_right) and no_chao:
 #		sprite.play("default")
@@ -121,6 +126,7 @@ func _on_pes_body_entered(body):
 	body.esmagar()
 	
 func pular():
+	$'jump'.play()
 	velocity.y = -JUMP_SPEED
 	jumping = true
 
@@ -179,3 +185,9 @@ func _on_fim_body_entered(body):
 	
 func moeda():
 	emit_signal("moeda")
+	
+func bau():
+	emit_signal("bau")
+	
+func heart():
+	emit_signal("heart")

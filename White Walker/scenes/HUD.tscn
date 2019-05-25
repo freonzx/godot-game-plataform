@@ -1,0 +1,149 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://assets/Botoes/esquerda0.png" type="Texture" id=1]
+[ext_resource path="res://assets/Botoes/esquerda1.png" type="Texture" id=2]
+[ext_resource path="res://assets/Botoes/direita0.png" type="Texture" id=3]
+[ext_resource path="res://assets/Botoes/direita1.png" type="Texture" id=4]
+[ext_resource path="res://assets/Botoes/cima0.png" type="Texture" id=5]
+[ext_resource path="res://assets/Botoes/cima1.png" type="Texture" id=6]
+[ext_resource path="res://assets/Bonus_Items/Coin_03.png" type="Texture" id=7]
+[ext_resource path="res://assets/Fonts/FjordOne-Regular.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://assets/hud_heartFull.png" type="Texture" id=9]
+[ext_resource path="res://assets/Bonus_Items/Cartoon Jungle Game Tileset_Collectable Object - Locked Golden Treasure Box.png" type="Texture" id=10]
+
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 0.0117647, 0.0117647, 0.0117647, 0.32549 )
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color( 0.027451, 0.964706, 0.0784314, 1 )
+border_blend = true
+
+[sub_resource type="DynamicFont" id=13]
+size = 75
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 8 )
+
+[sub_resource type="Gradient" id=14]
+colors = PoolColorArray( 1, 0.00392157, 0.00392157, 1, 0.780392, 0.466667, 0.466667, 1 )
+
+[sub_resource type="GradientTexture" id=15]
+gradient = SubResource( 14 )
+
+[sub_resource type="ParticlesMaterial" id=16]
+emission_shape = 1
+emission_sphere_radius = 20.12
+flag_disable_z = true
+spread = 40.0
+gravity = Vector3( 0, -100, 0 )
+angular_velocity = 4.02853e-011
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 3.0
+scale_random = 0.4
+color_ramp = SubResource( 15 )
+
+[node name="CanvasLayer" type="CanvasLayer"]
+layer = 2
+
+[node name="controles" type="Node2D" parent="."]
+editor/display_folded = true
+
+[node name="touchLeft" type="TouchScreenButton" parent="controles"]
+modulate = Color( 1, 1, 1, 0.568627 )
+position = Vector2( 17.4902, 577.176 )
+scale = Vector2( 3.5, 3.5 )
+normal = ExtResource( 1 )
+pressed = ExtResource( 2 )
+
+[node name="touchRight" type="TouchScreenButton" parent="controles"]
+modulate = Color( 1, 1, 1, 0.568627 )
+position = Vector2( 188.206, 577.176 )
+scale = Vector2( 3.5, 3.5 )
+normal = ExtResource( 3 )
+pressed = ExtResource( 4 )
+
+[node name="touchUp" type="TouchScreenButton" parent="controles"]
+modulate = Color( 1, 1, 1, 0.568627 )
+position = Vector2( 1114.6, 577.176 )
+scale = Vector2( 3.5, 3.5 )
+normal = ExtResource( 5 )
+pressed = ExtResource( 6 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = 126.0
+margin_top = 9.0
+margin_right = 1154.0
+margin_bottom = 109.0
+custom_styles/panel = SubResource( 12 )
+
+[node name="coin" type="Sprite" parent="Panel"]
+position = Vector2( 57.793, 51 )
+scale = Vector2( 0.265136, 0.265136 )
+texture = ExtResource( 7 )
+
+[node name="coins" type="Label" parent="Panel"]
+margin_left = 110.595
+margin_top = -4.84958
+margin_right = 158.595
+margin_bottom = 90.1504
+custom_fonts/font = SubResource( 13 )
+text = "0"
+
+[node name="chests" type="Label" parent="Panel"]
+margin_left = 530.495
+margin_top = -5.0
+margin_right = 578.495
+margin_bottom = 90.0
+custom_fonts/font = SubResource( 13 )
+text = "0"
+
+[node name="heart1" type="TextureRect" parent="Panel"]
+editor/display_folded = true
+margin_left = 931.702
+margin_top = 21.4702
+margin_right = 1005.7
+margin_bottom = 79.4702
+texture = ExtResource( 9 )
+expand = true
+
+[node name="Particles2D" type="Particles2D" parent="Panel/heart1"]
+position = Vector2( 36.5856, 26.914 )
+scale = Vector2( 1.38331, 1.38331 )
+process_material = SubResource( 16 )
+
+[node name="heart2" type="TextureRect" parent="Panel"]
+editor/display_folded = true
+margin_left = 849.0
+margin_top = 21.0
+margin_right = 923.0
+margin_bottom = 79.0
+texture = ExtResource( 9 )
+expand = true
+
+[node name="Particles2D" type="Particles2D" parent="Panel/heart2"]
+position = Vector2( 36.5856, 26.914 )
+scale = Vector2( 1.38331, 1.38331 )
+process_material = SubResource( 16 )
+
+[node name="heart3" type="TextureRect" parent="Panel"]
+editor/display_folded = true
+margin_left = 765.0
+margin_top = 21.47
+margin_right = 839.0
+margin_bottom = 79.47
+texture = ExtResource( 9 )
+expand = true
+
+[node name="Particles2D" type="Particles2D" parent="Panel/heart3"]
+position = Vector2( 36.5856, 26.914 )
+scale = Vector2( 1.38331, 1.38331 )
+process_material = SubResource( 16 )
+
+[node name="chest" type="Sprite" parent="Panel"]
+position = Vector2( 491.9, 48.15 )
+scale = Vector2( 0.64375, 0.64375 )
+texture = ExtResource( 10 )
+

@@ -1,0 +1,65 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/Fonts/FjordOne-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://assets/Sounds/victory.ogg" type="AudioStream" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 100
+font_data = ExtResource( 1 )
+
+[sub_resource type="Gradient" id=2]
+colors = PoolColorArray( 1, 0.890196, 0, 1, 1, 0.607843, 0, 1 )
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 2 )
+
+[sub_resource type="ParticlesMaterial" id=4]
+emission_shape = 1
+emission_sphere_radius = 112.8
+flag_disable_z = true
+gravity = Vector3( 0, 98, 0 )
+initial_velocity = 160.92
+angular_velocity = 0.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+radial_accel = 100.0
+radial_accel_random = 0.4
+angle = 215.2
+angle_random = 0.36
+scale = 8.0
+color_ramp = SubResource( 3 )
+
+[node name="end" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Label" type="Label" parent="Control"]
+margin_left = 159.002
+margin_top = 76.851
+margin_right = 1186.0
+margin_bottom = 460.851
+custom_fonts/font = SubResource( 1 )
+text = "Congratulations!
+
+You finished the game."
+
+[node name="Particles2D" type="Particles2D" parent="Control"]
+position = Vector2( 96.8708, 257.209 )
+amount = 50
+process_material = SubResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 633.359, 371.005 )
+scale = Vector2( 21.2893, 12.3455 )
+z_index = -1
+texture = ExtResource( 2 )
+
+[node name="victory" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -10.0
+autoplay = true
+

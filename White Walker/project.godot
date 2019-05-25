@@ -16,8 +16,12 @@ _global_script_class_icons={
 [application]
 
 config/name="WW Star Chaser"
-run/main_scene="res://scenes/Game.tscn"
+run/main_scene="res://scenes/menu.tscn"
 config/icon="res://assets/Personagem/_JUMP_002.png"
+
+[autoload]
+
+transition="*res://scenes/transition.tscn"
 
 [display]
 

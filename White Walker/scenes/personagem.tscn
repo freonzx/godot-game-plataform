@@ -1,0 +1,108 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://scripts/personagem.gd" type="Script" id=1]
+[ext_resource path="res://assets/Personagem/_WALK_000.png" type="Texture" id=2]
+[ext_resource path="res://assets/Personagem/_WALK_001.png" type="Texture" id=3]
+[ext_resource path="res://assets/Personagem/_WALK_002.png" type="Texture" id=4]
+[ext_resource path="res://assets/Personagem/_WALK_003.png" type="Texture" id=5]
+[ext_resource path="res://assets/Personagem/_WALK_004.png" type="Texture" id=6]
+[ext_resource path="res://assets/Personagem/_WALK_005.png" type="Texture" id=7]
+[ext_resource path="res://assets/Personagem/_WALK_006.png" type="Texture" id=8]
+[ext_resource path="res://assets/Personagem/_JUMP_000.png" type="Texture" id=9]
+[ext_resource path="res://assets/Personagem/_JUMP_001.png" type="Texture" id=10]
+[ext_resource path="res://assets/Personagem/_JUMP_002.png" type="Texture" id=11]
+[ext_resource path="res://assets/Personagem/_JUMP_003.png" type="Texture" id=12]
+[ext_resource path="res://assets/Personagem/_JUMP_004.png" type="Texture" id=13]
+[ext_resource path="res://assets/Personagem/_JUMP_005.png" type="Texture" id=14]
+[ext_resource path="res://assets/Personagem/_JUMP_006.png" type="Texture" id=15]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "default",
+"speed": 9.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
+"loop": false,
+"name": "jump",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 27.7144, 57.7176 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 24.1801, 1.11157 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 27.1652, 50.9383 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 27.626, 1.25784 )
+
+[node name="personagem" type="KinematicBody2D"]
+position = Vector2( 2656.66, 305.36 )
+z_index = 1
+collision_mask = 2
+collision/safe_margin = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="sprite" type="AnimatedSprite" parent="."]
+position = Vector2( 29.6289, 8.99585 )
+scale = Vector2( 0.124069, 0.124069 )
+frames = SubResource( 2 )
+frame = 2
+
+[node name="shape" type="CollisionShape2D" parent="."]
+position = Vector2( 1.88676, 1.13206 )
+shape = SubResource( 3 )
+
+[node name="rayE" type="RayCast2D" parent="."]
+position = Vector2( -24.23, 58.3905 )
+enabled = true
+cast_to = Vector2( 0, 5 )
+collision_mask = 2
+
+[node name="rayD" type="RayCast2D" parent="."]
+position = Vector2( 28.2021, 57.5961 )
+enabled = true
+cast_to = Vector2( 0, 5 )
+collision_mask = 2
+
+[node name="camera" type="Camera2D" parent="."]
+current = true
+limit_left = 0
+limit_bottom = 800
+smoothing_enabled = true
+
+[node name="pes" type="Area2D" parent="."]
+position = Vector2( 0.263489, 0 )
+collision_layer = 1024
+collision_mask = 8192
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pes"]
+position = Vector2( 1.54001, 61.6009 )
+shape = SubResource( 4 )
+
+[node name="corpo" type="Area2D" parent="."]
+editor/display_folded = true
+collision_layer = 1024
+collision_mask = 8192
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="corpo"]
+position = Vector2( 1.1376, 0 )
+shape = SubResource( 5 )
+
+[node name="cabeca" type="Area2D" parent="."]
+
+[node name="shape" type="CollisionShape2D" parent="cabeca"]
+position = Vector2( 1.26477, -59.4713 )
+shape = SubResource( 6 )
+
+[connection signal="body_entered" from="pes" to="." method="_on_pes_body_entered"]
+[connection signal="body_entered" from="corpo" to="." method="_on_corpo_body_entered"]
+[connection signal="body_entered" from="cabeca" to="." method="_on_cabeca_body_entered"]
